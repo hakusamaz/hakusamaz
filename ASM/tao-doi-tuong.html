@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo đối tượng</title>
+</head>
+
+<body>
+    <script>
+        /* Bước 1: Khởi tạo đối tượng */
+        var ip5 = new Object();
+        console.log(ip5);
+        /* Bước 2: Khởi tạo thuộc tính cho đối tượng */
+        /* Xác định đối tượng có bao nhiêu thuộc tính  */
+        ip5.hinhAnh = 'https://cf.shopee.vn/file/20bd7ca87fcb0b5a9ff8789101dec309';
+        ip5.ten = 'Iphone Pro';
+        ip5.giaGoc = 500000;
+        ip5.phanTramGiamGia = 0.2; // 0.2 == 20 % 
+        ip5.khuVuc = "BMT";
+        console.log(ip5);
+
+        /* Bước 3: Tạo ra các phương thức cho đối tượng */
+        /* Xác định đối tượng cần có phương thức gì  */
+        ip5.tinhGiaBan = function () {
+            var giaBan = this.giaGoc * (1 - this.phanTramGiamGia);
+
+            return giaBan;
+        }
+        console.log(ip5);
+        /* Bước 4: sử dụng đối tượng */
+        /* Lấy ra được các thuộc tính của đối tượng */
+        /* và sử dụng được các phương thức đã viết của đối tượng */
+
+        console.log('Hình ảnh của ip5: ' + ip5.hinhAnh);
+        console.log('giá bán của ip5 là : ' + ip5.tinhGiaBan());
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truy Cập node </title>
+    <style>
+        #danh-sach-san-pham{
+            padding: 20px;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="danh-sach-san-pham">
+        <div name="san-pham">
+            <h1 class="san-pham-ten"> Iphone 5 </h1>
+        </div>
+
+        <div name="san-pham">
+            <h1 class="san-pham-ten"> Iphone 6</h1>
+
+        </div> 
+
+    </div>
+    <script>
+        /* Truy cập theo id của node   */
+        var nodeDanhSachSanPham = document.getElementById('danh-sach-san-pham');
+        console.log(nodeDanhSachSanPham);
+
+        /* Truy cập theo tên của node  */
+        var danhSachNodeSanPham = document.getElementsByName('san-pham');
+        console.log(danhSachNodeSanPham);
+
+        /* danh sách là 1 mảng */
+        console.log(danhSachNodeSanPham[1]);
+
+        /* Truy cập theo tag name -- > Tag là thẻ của html */
+        /* Truy cập tất cả có tag là H1 */
+        var danhSachNodeH1 = document.getElementsByTagName('h1');
+        console.log(danhSachNodeH1);
+
+        /* Lấy từng phần tử */
+        console.log(danhSachNodeH1[0]);
+
+        /* Truy cập theo phần tử cha; Mỗi con chỉ có một cha */
+        /* ví dụ: cha của san-pham à danh-sach-san-pham  */
+        /* Bước 1: Truy cập tới node con  */
+        var nodeCon = danhSachNodeSanPham[0];
+        /* Bước 2: Từ node con truy cập tới node cha  */
+        var nodeCha = nodeCon.parentElement;
+        console.log(nodeCha);
+        /* Từ node cha truy cập tới các node con, các node cha có thể có nhiều con */
+        /* Trả ra mảng các node con  */
+        /* Bước 1: Lấy node cha  */
+        var nodeCha2 = document.getElementById('danh-sach-san-pham');
+        /* Bước 2: Từ node cha lấy danh sách node con */
+        var danhSachNodeCon = nodeCha2.childNodes;
+        console.log(danhSachNodeCon);
+    </script>
+</body>
+</html>

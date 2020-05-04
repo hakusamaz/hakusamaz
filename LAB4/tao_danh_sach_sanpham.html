@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lưu Trữ và truy xuất danh sách đối tượng</title>
+
+</head>
+
+<body>
+    <script>
+        /* Yêu cầu 1: tạo và lưu trữ danh sách sản phẩm  xuống local storage */
+        /* Bước 1: tạo danh sách sản phẩm */
+        var danhSachSanPham = taoDanhSachSanPham();
+        console.log(danhSachSanPham);
+
+        /* Bước 2: Chuyển danh sách sản phẩm thành chuỗi JSON */
+        var json = JSON.stringify(danhSachSanPham);
+        console.log(json);
+
+        /* Bước 3: Lưu trữ xuống local storage */
+        localStorage.setItem('danhSachSanPham',json);
+
+        /* Yêu cầu 2: Lấy json từ local storage -> danh sách đối tượng */
+        var jsonDanhSachSanPhamLayTuLocalStorage = localStorage.getItem('danhSachSanPham');
+        var danhSachSanPhamTuLocalStorage = JSON.parse(jsonDanhSachSanPhamLayTuLocalStorage);
+        console.log('danh sách đối tượng load lên từ local storage là: ');
+        console.log(danhSachSanPhamTuLocalStorage);
+
+
+        /* Mục tiêu: Tạo danh sáchc sản phẩm
+           output: danh sách sản phẩm */
+        function taoDanhSachSanPham() {
+            var danhSachSanPham = new Array();
+            var iphone5 = new Object();
+            iphone5.hinhAnh = 'https://cdn.tgdd.vn/Products/Images/42/57240/iphone-5_clip_image002.jpg';
+            iphone5.ten = "Iphone 5";
+            iphone5.giaGoc = 5000000;
+            iphone5.phanTramGiamGia = 20;
+            iphone5.khuVuc = "Hà nội";
+
+            for( var i = 0; i<20;i++){
+                danhSachSanPham.push(iphone5);
+            }
+            return danhSachSanPham;
+        }
+           
+    </script>
+</body>
+
+</html>

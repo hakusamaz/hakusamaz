@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học thêm về sự kiện ngoài onclick</title>
+    <style>
+        .block{
+            margin: auto;
+            height: 100px;
+            width: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- OnChange: Dữ liệu bên trong bị thay đổi -->
+    <input onkeydown="anBanPhim()" onchange="xayRaOnChange()" type="text">
+
+    <div onmouseover="reChuotVao()" onmouseout="reChuotRa()" class="block">
+
+    </div>
+
+    <script>
+        function xayRaOnChange() {
+            console.log('on change')
+            
+        }
+
+        function reChuotVao() {
+            console.log('Xảy ra sự kiện rê chuột vào khối');
+            
+        }
+        function reChuotRa() {
+            console.log('Xảy ra sự kiện rê chuột ra khỏi khối');
+        }
+        function anBanPhim() {
+            console.log('Ấn phím kìa thằng ngu')
+            
+        }
+    </script>
+</body>
+</html>

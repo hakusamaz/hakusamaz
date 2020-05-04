@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .san-pham {
+            max-width: 1100px;
+            margin: auto;
+            box-shadow: 2px 2px 4px #ddd;
+            padding: 20px;
+        }
+
+        .item-san-pham {
+            width: 20%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 4px #ddd;
+            position: relative;
+        }
+
+        .item-san-pham .hinh-anh .zoom {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 200%;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="san-pham">
+        <div class="item-san-pham">
+            <div class="hinh-anh">
+                <img onmouseover="hienThiAnhZoom('zoom-anh-1')"
+                    src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-1/90746605_220786022479379_8368519540308443136_n.jpg?_nc_cat=108&_nc_sid=dbb9e7&_nc_ohc=BeT3nFk6jzUAX89qZ1-&_nc_ht=scontent.fdad2-1.fna&oh=77ff51ea5d7ff2ac9d6eeef08fe1bbb7&oe=5EC6423D">
+                <img onmouseout="anAnhZoom(event)"
+                    src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-1/90746605_220786022479379_8368519540308443136_n.jpg?_nc_cat=108&_nc_sid=dbb9e7&_nc_ohc=BeT3nFk6jzUAX89qZ1-&_nc_ht=scontent.fdad2-1.fna&oh=77ff51ea5d7ff2ac9d6eeef08fe1bbb7&oe=5EC6423D"
+                    name = "zoom" class="zoom">
+            </div>
+        </div>
+    </div>
+    <div class="item-san-pham">
+        <div class="hinh-anh">
+            <img onmouseover="hienThiAnhZoom('zoom-anh-1')"
+                src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-1/90746605_220786022479379_8368519540308443136_n.jpg?_nc_cat=108&_nc_sid=dbb9e7&_nc_ohc=BeT3nFk6jzUAX89qZ1-&_nc_ht=scontent.fdad2-1.fna&oh=77ff51ea5d7ff2ac9d6eeef08fe1bbb7&oe=5EC6423D">
+            <img onmouseout="anAnhZoom()"
+                src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-1/90746605_220786022479379_8368519540308443136_n.jpg?_nc_cat=108&_nc_sid=dbb9e7&_nc_ohc=BeT3nFk6jzUAX89qZ1-&_nc_ht=scontent.fdad2-1.fna&oh=77ff51ea5d7ff2ac9d6eeef08fe1bbb7&oe=5EC6423D"
+                name = "zoom" class="zoom">
+        </div>
+    </div>
+
+    <script>
+        function hienThiAnhZoom(event) {
+            console.log('Loại event là: ' + event.type);
+            console.log('node xảy ra event là:');
+
+            var nodeHienThiDangReChuotVao = event.target;
+            console.log(nodeHienThiDangReChuotVao);
+            /* B1: Truy cập vào ndoe ảnh zoom */
+
+            /* B2: Chuyển trạng thái sang dạng hiển thị */
+
+        }
+        function anAnhZoom() {
+
+        }
+    </script>
+</body>
+
+</html>

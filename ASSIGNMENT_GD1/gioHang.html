@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách giỏ hàng</title>
+    <script src="https://kit.fontawesome.com/706d205872.js" crossorigin="anonymous"></script>
+    <script src="giohang.js"></script>
+    <script src="sanpham.js"></script>
+    <script src="hotro.js"></script>
+    <script src="login.js"></script>
+    <link rel="stylesheet" href="CSS/style_login.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<nav id="nav-bar">
+    <ul class="menu-lv1">
+        <li class="item-lv1">
+            <a href="#" class="item-lv1-title">ĐIỆN THOẠI</a>
+            <ul class="menu-lv2">
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">APPLE</a>
+                </li>
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">SAMSUNG</a>
+                </li>
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">OPPO</a>
+                </li>
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">VSMART</a>
+                </li>
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">VIVO</a>
+                </li>
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">NOKIA</a>
+                </li>
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">HUAWEI</a>
+                </li>
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">REALME</a>
+                </li>
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">VERTU</a>
+                </li>
+            </ul>
+
+        </li>
+        <li class="item-lv1">
+            <a href="#" class="item-lv1-title">PHỤ KIỆN</a>
+        </li>
+        <li class="item-lv1">
+            <a href="#" class="item-lv1-title"> LAPTOP </a>
+            <ul class="menu-lv2">
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">ASUS</a>
+                </li>
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">LENOVO</a>
+                </li>
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">DELL</a>
+                </li>
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">HP</a>
+                </li>
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">ASER</a>
+                </li>
+                <li class="item-lv2">
+                    <a href="#" class="item-lv2-title">MACBOOK</a>
+                </li>
+            </ul>
+        </li>
+        <form>
+            <input type="text" id="thanhTimKiem" placeholder="Bạn tìm gì ...">
+        </form>
+        <button class="timKiem">Tìm kiếm</button>
+        <li class="item-lv1">
+            <i class="fas fa-cart-arrow-down"></i>
+        </li>
+    </ul>
+</nav>
+<div class="gio-hang" id="gio-hang">
+    <h1 class="tieuDe">
+        Danh sách sản phẩm
+    </h1>
+    <div class="item-gio-hang tieuDeCuaItemGioHang">
+        <div class="hinhAnh">
+        </div>
+        <p class="ten">Sản Phẩm</p>
+        <div class="gia">
+            Đơn Giá
+        </div>
+        <p class="soLuong">Số Lượng</p>
+        <p class="tongTien">Tổng Tiền</p>
+        <div class="hanhDong">
+            <p>Thao Tác</p>
+        </div>
+    </div>
+</div>
+<div class="thongtinkhachhang"></div>
+<div class="form">
+    <h1 class="dangNhap"><b>Đăng Nhập</b></h1>
+    <label for="hoTen"><b>Tên</b></label>
+    <input type="text" id="hoTen">
+    <label id="hienThiLoiHoTen" for="hoTen" class="error"></label>
+
+    <label for="soDienThoai"><b>Số Điện Thoại</b></label>
+    <input type="number" id="soDienThoai">
+    <label id="hienThiLoiSoDienThoai" for="soDienThoai" class="error"></label>
+
+    <button onclick="onClickDangNhap()">Đăng Nhập </button>
+</div>
+<footer>
+    Conppyright By @Long Dep Trai 2020
+</footer>
+
+<body>
+
+    <script>
+
+        function onClickDangNhap() {
+            if (formDangNhapHopLe() == true) {
+            }
+        }
+        hienThiDanhSachItemGioHang();
+
+        function hienThiDanhSachItemGioHang() {
+            var danhSachItemGioHang = layGioHangTuLocalStorage();
+            var HTML = chuyenDanhSachItemGioHangSangHTML(danhSachItemGioHang)
+            console.log(danhSachItemGioHang);
+            var nodeGioHang = document.getElementById('gio-hang');
+            nodeGioHang.innerHTML = nodeGioHang.innerHTML + HTML;
+
+
+        }
+
+        function chuyenDanhSachItemGioHangSangHTML(danhSachItemGioHang) {
+            var htmlTong = '';
+            for (var i = 0; i < danhSachItemGioHang.length; i++) {
+                htmlTong = htmlTong + chuyenDoiTuongItemGioHangSangHTML(danhSachItemGioHang[i]);
+            }
+            return htmlTong;
+        }
+
+        function chuyenDoiTuongItemGioHangSangHTML(itemGioHang) {
+            var sanPham = laySanPhamTheoId(itemGioHang.idSanPham);
+            var tongTien = itemGioHang.soLuong * sanPham.tinhGiaBan();
+
+            var html = '   <div class="item-gio-hang">  ' +
+                '           <div class="hinhAnh">  ' +
+                '               <img src="' + sanPham.hinhAnh + '">  ' +
+                '           </div>  ' +
+                '           <p class="ten">' + sanPham.ten + '</p>  ' +
+                '           <div class="gia">  ' +
+                '               <span class="giaGoc">' + sanPham.giaGoc + 'đ</span>  ' +
+                '               <span class="giaBan">' + '&nbsp &nbsp' + sanPham.tinhGiaBan() + 'đ</span>  ' +
+                '           </div>  ' +
+                '           <input type="number" class="soLuong" value="' + itemGioHang.soLuong + '">  ' +
+                '           <p class="tongTien">' + tongTien + '</p>  ' +
+                '           <div class="hanhDong">  ' +
+                '               <i class="far fa-trash-alt"></i>  ' +
+                '           </div>  ' +
+                '      </div>  ';
+
+            return html;
+
+        }
+    </script>
+
+</body>
+
+</html>

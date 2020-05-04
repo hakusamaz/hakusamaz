@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0; 
+}
+.them-moi-san-pham {
+    width: 500px;
+    border: 1px solid #ddd;
+    margin: auto;
+    padding: 30px;
+    margin-top: 50px;
+    box-shadow: 2px 2px 5px #ddd;
+}
+
+.them-moi-san-pham label,
+input {
+    width: 100%;
+    display: block;
+}
+
+.them-moi-san-pham label {
+    margin-top: 20px;
+
+}
+
+.them-moi-san-pham input {
+    margin-top: 5px;
+    padding: 10px 20px;
+    border: 1px solid #444444;
+    border-radius: 5px;
+}
+
+.them-moi-san-pham button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #74B71A;
+}
+
+.them-moi-san-pham button:hover {
+    background-color: var(--primary-dark-color);
+}
+h2{
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

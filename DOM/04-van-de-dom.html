@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vấn đề sử dụng hàm trong dom</title>
+</head>
+
+<body>
+    <input type="number" id="soA" placeholder="Nhập số A">
+    <input type="number" id="soB" placeholder="Nhập số B">
+    <button onclick="onClickTinhTong2So()">Tính tổng 2 số </button>
+    <p id="ket-qua-tong-2-so">
+        <!-- Hiển thị Kết quả -->
+    </p>
+    <script>
+        /* Tính tổng 2 số - > Xây dựng 1 hàm tính tổng 2 số  */
+        function onClickTinhTong2So() {
+            /* Bước 1: Là truy cập vào inputNodeSoA Để lấy số A */
+            var nodeSoA = document.getElementById('soA');
+            var soA = parseInt(nodeSoA.value);
+            console.log(nodeSoA);
+
+            /* Bước 2: Là Truy cập vào inputNodeSoB Để lấy số B */
+            var nodeSoB = document.getElementById('soB');
+            var soB = parseInt(nodeSoB.value);
+            console.log(nodeSoB);
+
+            /* Bước 3: Gọi hàm tính tổng 2 số  */
+            var tong = tong2So(soA, soB);
+
+
+            /* Bước 4: Truy cập node ketQua2So và ghi ra kết quả  */
+            var nodeKetQua = document.getElementById('ket-qua-tong-2-so');
+            nodeKetQua.innerHTML = tong;
+        }
+        function tong2So(A, B) {
+            var tong = A + B;
+            return tong;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,323 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0; 
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+:root{
+    --primary-color:#FED700;
+    --primary-dark-color: #ccad00;
+    --primary-light-color: #ea4a4a;
+    --primary-gia-color: #e62e00;
+    --dark-color: #222;
+    --light-color: #fff;
+}
+img{
+    width: 100%;
+}
+.btn{
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.btn-primary{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+.btn-primary:hover{
+    background-color: var(--primary-dark-color);
+}
+/* Navbar */
+#nav-bar{
+    background-color: var(--primary-color);
+}
+.menu-lv1{
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+#logo{
+    background-color: var(--primary-color);
+}
+.logo{
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+.item-lv1{
+    padding: 16px 20px;
+}
+.item-lv1 a,i{
+    color: var(--dark-color);
+    font-size: 16px;
+    line-height: 20px;
+}
+.item-lv1:hover{
+    background-color: var(--primary-dark-color);
+}
+.item-lv1:hover .menu-lv2{
+    display: block;
+}
+.item-lv1:last-child{
+    margin-left: auto;
+}
+.menu-lv2{
+    border: 1px solid #ddd;
+    box-shadow: 1px 2px 2px #ddd;
+    position: absolute;
+    top: 52px;
+    display: none;
+    background-color: var(--light-color);
+}
+.menu-lv2 a{
+    color: var(--dark-color);
+}
+.menu-lv2 .item-lv2{
+    padding: 10px 20px;
+}
+.menu-lv2 .item-lv2:hover{
+    text-decoration: underline;
+}
+#thanhTimKiem{
+    margin-top: 7px;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: none;
+}
+.timKiem{
+    border: none;
+    width: 70px;
+    height: 36px;
+    margin-top: 7px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+.timKiem:hover{
+    background-color: #ddd;
+}
+#slider{
+    width: 1100px;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 4px #ddd;
+    padding: 10px;
+}
+#product .items{
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 40px;
+}
+#product .items{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+#product .items .item{
+    border: 1px solid #ddd;
+    box-shadow: 1px 2px 4px #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+#product .items .item .item-ten{
+    font-size: 20px;
+    line-height: 30px;
+    margin: 10px 0;
+}
+#product .items .item .item-gia{
+    margin-bottom: 20px;
+
+}
+#product .items .item .item-gia .item-gia-goc{
+    font-size: 12px;
+    text-decoration: line-through;
+}
+#product .items .item .item-gia .item-gia-ban{
+    font-size: 16px;
+    color: var(--primary-gia-color);
+
+}
+#product .items .item .btn{ 
+    margin-left: auto;
+    display: block;
+}
+/* Footer */
+footer{
+    padding: 10px 20px;
+    background-color: var(--dark-color);
+    text-align: center;
+    color: var(--light-color);
+    margin-top: 50px;
+}
+.them-moi-san-pham {
+    width: 50%;
+    border: 1px solid #ddd;
+    margin: auto;
+    padding: 30px;
+    margin-top: 50px;
+    box-shadow: 2px 2px 5px #ddd;
+}
+
+.them-moi-san-pham label,
+input {
+    width: 100%;
+    display: block;
+}
+
+.them-moi-san-pham label {
+    margin-top: 20px;
+
+}
+
+.them-moi-san-pham input {
+    margin-top: 5px;
+    padding: 10px 20px;
+    border: 1px solid #444444;
+    border-radius: 5px;
+}
+
+.them-moi-san-pham button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+}
+
+.them-moi-san-pham button:hover {
+    background-color: var(--primary-dark-color);
+}
+.img {
+    width: 100%;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.gio-hang {
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 4px;
+    padding: 20px;
+    margin: auto;
+    max-width: 1100px;
+}
+
+.gio-hang .tieuDe {
+    font-size: 20px;
+    color: red;
+    margin-bottom: 20px;
+
+}
+
+.item-gio-hang {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item-gio-hang .hinhAnh img {
+    width: 60px;
+    height: 60px;
+}
+
+.item-gio-hang .hinhAnh {
+    width: 60px;
+}
+
+.item-gio-hang input {
+    width: 100%;
+}
+
+.gio-hang .tieuDeCuaItemGioHang {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.item-gio-hang .hinhAnh,
+.soLuong,
+.tongTien,
+.hanhDong {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.item-gio-hang .gia {
+    flex: 2;
+}
+
+.item-gio-hang .ten {
+    flex: 3;
+}
+
+.item-gio-hang .giaGoc {
+    text-decoration: line-through;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.item-gio-hang .hanhDong i {
+    color: black;
+}
+
+.item-gio-hang .gia .giaBan {
+    color: #CD1818;
+}
+
+.item-gio-hang .hanhDong i:hover {
+    color: #CD1818;
+}
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1100px;
+    margin: auto;
+  } 
+  /* Ẩn các slider */
+   .mySlides {
+      display: none;
+  } 
+  
+  /* định dạng các chấm chuyển đổi các slide */
+  .dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  } 
+  /* khi được hover, active đổi màu nền */
+   .active, .dot:hover {
+    background-color: #717171;
+  } 
+   
+  /* Thêm hiệu ứng khi chuyển đổi các slide */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 3s;
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+   
+/*   @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+   
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }   */

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <script src="sanPham.js"></script>
+</head>
+
+<body>
+    <script>
+        /* tạo đối tượng */
+        var ip5 = taoDoiTuongSanPham('https://vignette.wikia.nocookie.net/date-a-live/images/6/6c/Raizen_Uniform_Kurumi.jpg/revision/latest/scale-to-width-down/340?cb=20140117110038', 'Kurumi', 3000, 0.2, "Hà nội");
+        console.log(ip5);
+
+        /* B1: Chuyển đối tượng thành json */
+        var json = JSON.stringify(ip5);
+        console.log('Cấu trúc json của đối tượng là: ' + json);
+
+        /* Chuyển Json thành đối tượng */
+        var jsonInput = '{"hinhAnh":"https://vignette.wikia.nocookie.net/date-a-live/images/6/6c/Raizen_Uniform_Kurumi.jpg/revision/latest/scale-to-width-down/340?cb=20140117110038","ten":"Kurumi","giaGoc":3000,"phanTramGiamGia":0.2,"khuVuc":"Hà nội"}';
+        var doiTuong = JSON.parse(jsonInput);
+        console.log('Đối tượng được parse ra từ json là')
+        console.log(doiTuong); 
+        console.log('hình ảnh của đối tượng là: ' + doiTuong.hinhAnh);
+    </script>
+</body>
+
+</html>

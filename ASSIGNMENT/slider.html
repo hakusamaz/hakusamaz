@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị slider</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .slider {
+            max-width: 1100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px #ddd;
+            margin: auto;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .slider-item {
+            display: none;
+        }
+
+        .show {
+            display: none;
+        }
+
+        .slider a {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- B1: Xây dựng layout cho slayder  -->
+    <div class="slider">
+        <div name="slider-item" class="slider-item show">
+            <img src="https://cdn.tgdd.vn/2020/04/banner/laptop-onha-800-300-800x300.png">
+        </div>
+        <div name="slider-item" class="slider-item">
+            <img
+                src="https://cdn.tgdd.vn/2020/04/banner/800-300-800x300-22.png">
+        </div>
+        <div name="slider-item" class="slider-item">
+            <img src="https://cdn.tgdd.vn/2020/04/banner/pk-304-800-300-800x300.png">
+        </div>
+        <a onclick="onClickXemAnhTruoc()" class="truoc">&lt;</a>
+        <a onclick="onClickXemAnhSau()" class="sau">&gt;</a>
+    </div>
+    <script>
+        /* HTML: Lúc đầu tất cả các slider item sẽ được ẩn đi  */
+        /* Mặc định slider item đầu tiên sẽ được hiển thị  */
+        /* Khi mà click nút > (sau)  sẽ ẩn item hiện tại đi & hiển thị slider kế tiếp (hiện tại +1) */
+        /* Tuy nhiên nếu slider-item đang ở vị trí cuối cùng thì slider kế tiếp = 0 */
+        var viTriSliderItemHienThiHienTai = 0;
+        var danhSachSliderItem = document.getElementsByName('slider-item');
+        console.log(danhSachSliderItem);
+        hienThiSliderItem(viTriSliderItemHienThiHienTai);
+
+        function onClickXemAnhSau() {
+            /* B1: Thay đổi vị trí hiển thị của slider item
+                Vị trí hiển thị mới = vị trí cũ + 1
+                Nếu vị trí cũ là slider item cuối cùng thì vị trí mới = 0 */
+            viTriSliderItemHienThiHienTai = viTriSliderItemHienThiHienTai + 1;
+            if (viTriSliderItemHienThiHienTai == danhSachSliderItem.length)
+                viTriSliderItemHienThiHienTai = 0;
+            /* B2: hiển thị lại vị trí slider item theo vị trí hiện tại mới thay đổi */
+            hienThiSliderItem(viTriSliderItemHienThiHienTai);
+
+        }
+        function onClickXemAnhTruoc() {
+            viTriSliderItemHienThiHienTai = viTriSliderItemHienThiHienTai + 1;
+            if (viTriSliderItemHienThiHienTai == danhSachSliderItem.length)
+                viTriSliderItemHienThiHienTai = 0;
+
+            hienThiSliderItem(viTriSliderItemHienThiHienTai);
+
+        }
+
+        /* Mô tả: Hiển thị slider item theo vị trí truyền vào */
+        function hienThiSliderItem(viTri) {
+            /* B1: Ẩn toàn bộ các slider item trước đó */
+            for (var i = 0; i < danhSachSliderItem.length; i++) {
+                danhSachSliderItem[i].style.display = 'none';
+            }
+            /* B2: Hiển thị lên slider item theo vị trí truyền vào */
+            danhSachSliderItem[viTri].style.display = 'block';
+
+
+
+        }
+    </script>
+</body>
+
+</html>

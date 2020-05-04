@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm </title>
+    <script src="https://kit.fontawesome.com/797d9ea394.js" crossorigin="anonymous"></script>
+    <script src="sanpham.js"></script>
+    <script src="hotro.js"></script>
+    <script src="slider.js"></script>
+    <script src="slider.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav id="nav-bar">
+        <ul class="menu-lv1">
+            <li class="item-lv1">
+                <a href="#" class="item-lv1-title">ĐIỆN THOẠI</a>
+                <ul class="menu-lv2">
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">APPLE</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">SAMSUNG</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">OPPO</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">VSMART</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">VIVO</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">NOKIA</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">HUAWEI</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">REALME</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">VERTU</a>
+                    </li>
+                </ul>
+
+            </li>
+            <li class="item-lv1">
+                <a href="#" class="item-lv1-title">PHỤ KIỆN</a>
+                <ul class="menu-lv2">
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">LOA BLUETOOTH</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">HEADPHONE</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title"> SẠC CÁP </a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">THẺ NHỚ </a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">USB</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">SẠC DỰ PHÒNG</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">BÀN PHÍM</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">QUẠT MINI</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-lv1">
+                <a href="#" class="item-lv1-title"> LAPTOP </a>
+                <ul class="menu-lv2">
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">ASUS</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">LENOVO</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">DELL</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">HP</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">ASER</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">MACBOOK</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-lv1">
+                <a href="#" class="item-lv1-title"> ĐỒNG HỒ </a>
+                <ul class="menu-lv2">
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">ĐỒNG HỒ THÔNG MINH</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">ĐỒNG HỒ THỜI TRANG</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">ĐỊNH VỊ TRẺ EM</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">DÂY ĐỒNG HỒ</a>
+                    </li>
+                </ul>
+            </li>
+            <form>
+                <input type="text" id="thanhTimKiem" placeholder="Bạn tìm gì ...">
+            </form>
+            <button class="timKiem">Tìm kiếm</button>
+            <li class="item-lv1">
+                <i class="fas fa-cart-arrow-down"> </i>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="slider">
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="images/pic1.png" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/pic2.png" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/pic3.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/pic4.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/pic5.png" style="width:100%">
+            </div>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+
+    </section>
+
+    <section id="product">
+        <div class="items">
+            <div class="item">
+                <div class="item-hinhanh">
+                    <img src="https://cdn.tgdd.vn/Products/Images/42/57240/iPhone-5-l.jpg" alt="" srcset="">
+                </div>
+                <h2 class="item-ten">Iphone 5</h2>
+                <div class="item-gia">
+                    <span class="item-gia-goc">5000000 đ</span>
+                    <span class="item-gia-ban">4000000 đ</span>
+                </div>
+                <button class="btn btn-primary">Đưa vào giỏ hàng</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        Conppyright By @Long Dep Trai 2020
+    </footer>
+    <script>
+
+        var slideIndex;
+
+        var jsonDanhSachSanPham = localStorage.getItem('danhSachSanPham');
+        var danhSachSanPham = JSON.parse(jsonDanhSachSanPham);
+        if (danhSachSanPham == null)
+            danhSachSanPham = new Array();
+
+        var html = chuyenDanhSachDoiTuongSanPhamThanhHTML(danhSachSanPham);
+
+        var nodeProduct = document.getElementById('product');
+        nodeProduct.innerHTML = html;
+
+        function onClickDuaVaoGioHang(idSanPham) {
+            alert("onclick đưa vào giỏ hàng với sản phẩm có id là : " + idSanPham);
+
+            var danhSachItemGioHang = layGioHangTuLocalStorage();
+
+            var coTonTaiTrongDanhSachItemGioHang = false;
+            for (var i = 0; i < danhSachItemGioHang.length; i++) {
+                var itemGioHangHienTai = danhSachItemGioHang[i];
+
+                if (itemGioHangHienTai.idSanPham == idSanPham) {
+                    danhSachItemGioHang[i].soLuong++;
+                    coTonTaiTrongDanhSachItemGioHang = true;
+                }
+            }
+            if (coTonTaiTrongDanhSachItemGioHang == false) {
+                var itemGioHang = taoDoiTuongItemGioHang(idSanPham, 1);
+                danhSachItemGioHang.push(itemGioHang);
+            }
+
+            luuGioHangXuongLocalStorage(danhSachItemGioHang);
+
+
+
+        }
+        <footer>
+            Conppyright By @Long Dep Trai 2020
+    </footer>
+    </script>
+</body>
+
+</html>

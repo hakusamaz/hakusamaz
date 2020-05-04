@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mảng và đối tượng</title>
+    <script src="sanPham.js"></script>
+</head>
+
+<body>
+    <script>
+        /* 1. tạo ra danh sách đối tượng */
+        var danhSachSanPham = new Array();
+        console.log(danhSachSanPham);
+
+        /* Tạo đối tượng và đưa vào danh sách */
+        var ip5 = taoDoiTuongSanPham('https://cdn.tgdd.vn/Products/Images/42/60546/iphone-5s-16gb-7-400x460.png', "Iphone 5", 5000000, 0.2, "BMT");
+        danhSachSanPham.push(ip5);
+
+        var ip6 = taoDoiTuongSanPham('https://cdn.tgdd.vn/Products/Images/42/92962/iphone-6-32gb-gold-hh-600x600-600x600-600x600.jpg', "Iphone 6", 7000000, 0.3, "HCM");
+        danhSachSanPham.push(ip6);
+        console.log(danhSachSanPham);
+
+        /* 2. hiển thị ra tên & giá bán của toàn bộ sản phẩm nằm trong danh sách  */
+        /* Chạy vòng lặp để duyệt toàn bộ phần tử trong mảng; sau đó mỗi phần tử thì xuất ra tên và giá bán của sản phẩm  */
+
+        for (var i = 0; i < danhSachSanPham.length; i++) {
+            var sanPhamOViTriHienTai = danhSachSanPham[i];
+            console.log("Tên sản phẩm là " + sanPhamOViTriHienTai.ten + ' Giá bán là ' + sanPhamOViTriHienTai.tinhGiaBan());
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

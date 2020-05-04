@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CART</title>
+    <script src="https://kit.fontawesome.com/797d9ea394.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/style_index.css">
+    <link rel="stylesheet" href="CSS/slider.css">
+    <link rel="stylesheet" href="CSS/style_sanpham.css">
+    <link rel="stylesheet" href="CSS/style_cart.css">
+    <link rel="stylesheet" href="CSS/style_login.css">
+    <script src="SCRIPT/index.js"></script>
+    <script src="SCRIPT/slider.js"></script>
+    <script src="SCRIPT/sanpham.js"></script>
+    <script src="SCRIPT/hotro.js"></script>
+    <script src="SCRIPT/cart.js"></script>
+    <div class="thanhlogo">
+
+        <div class="logo-search">
+            <button class="login" onclick="document.getElementById('id01').style.display='block'"
+                style="width:auto;">Đăng nhập</button>
+
+            <div id="id01" class="modal">
+
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                            title="Close Modal">&times;</span>
+                        <img src="IMAGES/longhub.png" alt="Avatar" class="avatar">
+                    </div>
+
+                    <div class="container">
+                        <label for="uname"><b>Tên Đăng Nhập</b></label>
+                        <input type="text" placeholder="Nhập tên đăng nhập ..." name="uname" required>
+
+                        <label for="psw"><b>Mật Khẩu</b></label>
+                        <input type="password" placeholder="Nhập mật khẩu ..." name="psw" required>
+
+                        <button type="submit">Đăng Nhập</button>
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Ghi nhớ
+                        </label>
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                            class="cancelbtn">Cancel</button>
+                        <span class="psw">Quên <a href="#">mật khẩu?</a></span>
+                    </div>
+                </form>
+            </div>
+
+            <button class="register"><b>Đăng Ký</b></button>
+            <button class="cart"><i class="fas fa-cart-arrow-down"> <a href="cart.html">Giỏ hàng</a></i> </button>
+            <div class="search">
+                <form>
+                    <input type="text" id="thanhTimKiem" placeholder="Bạn tìm gì ...">
+                    <button class="timKiem">Tìm kiếm</button>
+                </form>
+            </div>
+            <div class="logo">
+                <img src="IMAGES/LOGO.JPG">
+            </div>
+        </div>
+        <div id="bocngoai">
+            <div class="sidebar">
+                <div class="logo">
+                    <h4>LongHub</h4>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">Laptop</a>
+                            <ul class="cap_2">
+                                <li>Aser</li>
+                                <li>Apple</li>
+                                <li>Asus</li>
+                                <li>Dell</li>
+                                <li>Fujitsu</li>
+                                <li>HP</li>
+                                <li>LG</li>
+                                <li>Lenovo</li>
+                                <li>MSI</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Điện Thoại</a>
+                            <ul class="cap_2">
+                                <li>Asus</li>
+                                <li>Apple</li>
+                                <li>Nokia</li>
+                                <li>Samsung</li>
+                                <li>Oppo</li>
+                                <li>Vsmart</li>
+                                <li>Vertu</li>
+                                <li>XiaoMi</li>
+                                <li>HuaWei</li>
+                                <li>Real Me</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Linh Kiện PC </a>
+                            <ul class="cap_2">
+                                <li>Tản nhiệt</li>
+                                <li>Bộ vi xử lí</li>
+                                <li>Ổ cứng HDD</li>
+                                <li>Bo mạch chủ</li>
+                                <li>PSU Nguồn máy tính</li>
+                                <li>Card màn hình</li>
+                                <li>Bộ nhớ trong</li>
+                                <li>Card âm thanh</li>
+                                <li>Ram</li>
+                                <li>Bàn phím, Chuột</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Màn hình PC</a>
+                            <ul class="cap_2">
+                                <li>Màn hình Aser</li>
+                                <li>Màn hình Apple</li>
+                                <li>Màn hình Asus</li>
+                                <li>Màn hình Dell</li>
+                                <li>Màn hình Fujitsu</li>
+                                <li>Màn hình HP</li>
+                                <li>Màn hình LG</li>
+                                <li>Màn hình Lenovo</li>
+                                <li>Màn hình MSI</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Gaming Gear</a>
+                            <ul class="cap_2">
+                                <li>Chuột Gaming</li>
+                                <li>Bàn phím Gaming</li>
+                                <li>Tai nghe Gaming</li>
+                                <li>Ghế game chuyên dụng</li>
+                                <li>Tay cầm chơi game</li>
+                                <li>Thiết bị stream</li>
+                                <li>Bàn di Chuột</li>
+                                <li>Micro</li>
+                                <li>Đồ trang trí</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Thiết bị mạng</a>
+                            <ul class="cap_2">
+                                <li>Asus</li>
+                                <li>D-link</li>
+                                <li>Draytek</li>
+                                <li>Linksys</li>
+                                <li>Totolink</li>
+                                <li>Ubquiti</li>
+                                <li>Cisco</li>
+                                <li>Hikvison</li>
+                                <li>Planet</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="icon">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="gio-hang" id="gio-hang">
+        <h1 class="tieuDe">
+            Danh sách sản phẩm
+        </h1>
+        <div class="item-gio-hang tieuDeCuaItemGioHang">
+            <div class="hinhAnh">
+            </div>
+            <p class="ten">Sản Phẩm</p>
+            <div class="gia">
+                Đơn Giá
+            </div>
+            <p class="soLuong">Số Lượng</p>
+            <p class="tongTien">Tổng Tiền</p>
+            <div class="hanhDong">
+                <p>Thao Tác</p>
+            </div>
+        </div>
+    </div>
+    
+</head>
+
+<body>
+    <script>
+        function onClickDangNhap() {
+            if (formDangNhapHopLe() == true) {
+            }
+        }
+        hienThiDanhSachItemGioHang();
+
+        function hienThiDanhSachItemGioHang() {
+            var danhSachItemGioHang = layGioHangTuLocalStorage();
+            var HTML = chuyenDanhSachItemGioHangSangHTML(danhSachItemGioHang)
+            console.log(danhSachItemGioHang);
+            var nodeGioHang = document.getElementById('gio-hang');
+            nodeGioHang.innerHTML = nodeGioHang.innerHTML + HTML;
+
+
+        }
+
+        function chuyenDanhSachItemGioHangSangHTML(danhSachItemGioHang) {
+            var htmlTong = '';
+            for (var i = 0; i < danhSachItemGioHang.length; i++) {
+                htmlTong = htmlTong + chuyenDoiTuongItemGioHangSangHTML(danhSachItemGioHang[i]);
+            }
+            return htmlTong;
+        }
+
+        function chuyenDoiTuongItemGioHangSangHTML(itemGioHang) {
+            var sanPham = laySanPhamTheoId(itemGioHang.idSanPham);
+            var tongTien = itemGioHang.soLuong * sanPham.tinhGiaBan();
+
+            var html = '   <div class="item-gio-hang">  ' +
+                '           <div class="hinhAnh">  ' +
+                '               <img src="' + sanPham.hinhAnh + '">  ' +
+                '           </div>  ' +
+                '           <p class="ten">' + sanPham.ten + '</p>  ' +
+                '           <div class="gia">  ' +
+                '               <span class="giaGoc">' + sanPham.giaGoc + 'đ</span>  ' +
+                '               <span class="giaBan">' + '&nbsp &nbsp' + sanPham.tinhGiaBan() + 'đ</span>  ' +
+                '           </div>  ' +
+                '           <input type="number" class="soLuong" value="' + itemGioHang.soLuong + '">  ' +
+                '           <p class="tongTien">' + tongTien + 'đ</p>  ' +
+                '           <div class="hanhDong">  ' +
+                '               <i class="far fa-trash-alt"></i>  ' +
+                '           </div>  ' +
+                '      </div>  ';
+
+            return html;
+
+        }
+    </script>
+</body>
+
+
+</html>

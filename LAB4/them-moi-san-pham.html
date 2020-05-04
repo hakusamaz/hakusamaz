@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm mới sản phẩm </title>
+    <script src="ho_Tro.js"></script>
+    <script src="sanPham.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .them-san-pham {
+            width: 30%;
+            margin: auto;
+            border: 1px solid #ddd;
+            box-shadow: 1px 2px 4px #ddd;
+            padding: 40px;
+        }
+
+        .them-san-pham label {
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            line-height: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .them-san-pham input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .them-san-pham .btn {
+            padding: 10px 20px;
+            width: 100%;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="them-san-pham">
+        <label for="hinhAnh"> Hình Ảnh Sản Phẩm</label>
+        <input type="text" id="hinhAnh">
+
+        <label for="ten"> Tên Sản Phẩm</label>
+        <input type="text" id="ten">
+
+        <label for="giaGoc"> Giá Gốc </label>
+        <input type="number" id="giaGoc">
+
+        <label for="phanTramGiamGia"> Giảm Giá ( Nhập từ 0 - 1 ) % </label>
+        <input type="number" id="phanTramGiamGia">
+
+        <label for="khuVuc"> Khu vực bán </label>
+        <input type="text" id="khuVuc">
+
+        <button onclick="onClickSanPham()" class="btn"> Tạo Sản Phẩm </button>
+
+
+    </div>
+    <script>
+
+        function onClickSanPham() {
+            var sanPham = taoDoiTuongTuInput();
+            console.log(sanPham);
+
+
+            /* Bước 3: Lấy danh sách sản phẩm từ local storage lên */
+            var jsonDanhSachSanPham = localStorage.getItem('danhSachSanPham');
+            var danhSachSanPham = new Array();
+            var danhSachSanPham = JSON.parse(jsonDanhSachSanPham);
+            if (danhSachSanPham == null)
+                danhSachSanPham = new Array();
+            console.log('Danh sách cũ là');
+            console.log(danhSachSanPham);
+
+
+            /* Bước 4: Đưa thêm đối tượng sản phẩm được tạo ra ở bước 2 thêm vào danh sách sản phẩm */
+            danhSachSanPham.push(sanPham);
+            console.log('danh sách mới sau khi thêm là ');
+            console.log(danhSachSanPham);
+
+
+            /* Bước 5: Cập nhật lại danh sách sản phẩm vào local storage  */
+            var jsonDanhSachSanPham = JSON.stringify(danhSachSanPham);
+            localStorage.setItem('danhSachSanPham', jsonDanhSachSanPham);
+
+        }
+        function taoDoiTuongTuInput() {
+            /* Bước 1: Truy cập các node input để lấy được các thông tin: hinhAnh, ten, giaGoc, phanTramGiamGia, khuVuc */
+            var nodeHinhAnh = document.getElementById('hinhAnh');
+            var hinhAnh = nodeHinhAnh.value;
+            console.log('Hình ảnh sản phẩm: ' + hinhAnh);
+
+            var nodeTen = document.getElementById('ten');
+            var ten = nodeTen.value;
+            console.log('Tên sản phẩm: ' + ten);
+
+            var nodeGiaGoc = document.getElementById('giaGoc');
+            var giaGoc = nodeGiaGoc.value;
+            console.log('Giá Gốc sản phẩm: ' + giaGoc);
+
+            var nodePhanTramGiamGia = document.getElementById('phanTramGiamGia')
+            var phanTramGiamGia = nodePhanTramGiamGia.value
+            console.log('Giảm giá sản phẩm: ' + phanTramGiamGia);
+
+            var nodeKhuVuc = document.getElementById('khuVuc');
+            var khuVuc = nodeKhuVuc.value;
+            console.log('Khu vực: ' + khuVuc);
+            /* Bước 2: Tạo ra đối tượng các thuộc tính là các giá trị đã lấy từ bước 1   */
+            var sanPham = khaiBaoSanPham(hinhAnh, ten, giaGoc, phanTramGiamGia, khuVuc);
+            return sanPham;
+
+        }
+
+    </script>
+</body>
+
+</html>

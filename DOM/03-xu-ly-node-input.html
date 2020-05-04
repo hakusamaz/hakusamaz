@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xử lý node input</title>
+    <style>
+        img {
+            width: 100%;
+        }
+
+        .san-pham {
+            width: 20%;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .san-pham .ten-san-pham {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .btn {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: deeppink;
+            color: ghostwhite;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Input là những gì người dùng nhập vào
+         Mục tiêu: truy cập được các node input và đọc được dữ liệu người dùng để xử lý -->
+    <!-- Ví dụ: Tạo sản phẩm
+              1. Người dùng nhập tên và giá sản phẩm
+              2. Hiển thị tên và các sản phẩm người dùng đăng nhập -->
+    <label for="hinhAnhSanPham"> Hình ảnh sản phẩm </label>
+    <input type="text" id="hinhAnhSanPham">
+
+    <label for="tenSanPham"> Tên sản phẩm </label>
+    <input type="text" id="tenSanPham">
+
+    <label for="giaSanPham"> giá sản phẩm </label>
+    <input type="number" id="giaSanPham">
+
+    <button onclick="onClickTaoSanPham()">Tạo sản phẩm</button>
+
+    <p id="hien-thi-san-pham">
+        Để hiển thị sản phẩm
+        <!-- Bước 1: tạo layout  -->
+    </p>
+    <div id="hien-thi-danh-sach-san-pham">
+
+    </div>
+
+    <script>
+        function onClickTaoSanPham() {
+            /* Bước 1: Truy cập tới nodee input trên sản phẩm */
+            var nodeTenSanPham = document.getElementById('tenSanPham');
+            console.log(nodeTenSanPham);
+            /* Bước 2: Lấy dữ liệu nguời dùng nhập input trong tenSanPham */
+            var tenSanPham = nodeTenSanPham.value;
+            console.log('Tên sản phẩm là: ' + tenSanPham);
+
+            /* Bước 3: Truy cập tới node input giaSanPham */
+            var nodeGiaSanPham = document.getElementById('giaSanPham');
+            console.log(nodeGiaSanPham);
+
+            /* Bước 4: lấy dữ liệu người dùng nhập trong input giaSanPham */
+            var giaSanPham = nodeGiaSanPham.value;
+            console.log('Giá sản phẩm là: ' + giaSanPham);
+
+            /* Bước 5: Truy cập tới node hinhAnhSanPham */
+            var nodeHinhAnhSanPham = document.getElementById('hinhAnhSanPham');
+            console.log(nodeHinhAnhSanPham);
+
+            /* Bước 6: Lấy hình ảnh sản phẩm */
+            var hinhAnhSanPham = nodeHinhAnhSanPham.value;
+            console.log('Hình ảnh sản phẩm: ' + hinhAnhSanPham);
+
+            /* Bước 7: Truy cập tới node hien-thi-san-pham */
+            var nodeHienThiSanPham = document.getElementById('hien-thi-san-pham');
+            console.log(nodeHienThiSanPham);
+
+            /* Bước 8: Hiển thị thông tin sản phẩm trong node hien-thi-san-pham */
+            /* Hiển thị thành 1 cái card  */
+            /* 1.Build html cho sản phẩm  */
+
+            var html = '';
+            html += '<div class="san-pham">';
+            html += '<div class="hinh-anh-san-pham">';
+            html += '<img src="' + hinhAnhSanPham + '" alt="" srcset=""></div>';
+            html += '<h1 class="ten-san-pham">' + tenSanPham + '</h1>';
+            html += '<p class="gia-san-pham">' + giaSanPham + '</p>';
+            html += '<button class="btn">Thêm vào giỏ hàng</button> </div>';
+            console.log('html là : ' + html);
+
+            /* 2. Đưa html vào trong node hien-thi-san-pham */
+            nodeHienThiSanPham.innerHTML = html;
+
+            /* Tạo HTML chứa danh sách sản phẩm  */
+            var htmlDanhSachSanPham = '';
+            for (var i = 0; i < 10; i++) {
+                htmlDanhSachSanPham = htmlDanhSachSanPham + html;
+
+            }
+            console.log(htmlDanhSachSanPham);
+            /* Bước 9: Truy cập node danh sách sản phẩm  */
+            var nodeHienThiDanhSachSanPham = document.getElementById('hien-thi-danh-sach-san-pham');
+
+            /* Bước 10: Ghi đoạn HTML danh sách sản phẩm ra nodeHienThiDanhSachSanPham */
+            nodeHienThiDanhSachSanPham.innerHTML = htmlDanhSachSanPham;
+        }
+    </script>
+</body>
+
+</html>

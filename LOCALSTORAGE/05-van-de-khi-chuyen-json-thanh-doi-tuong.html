@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vấn đề khi chuyển json thành đối tượng</title>
+    <script src="sanPham.js"></script>
+</head>
+
+<body>
+    <script>
+        var json = localStorage.getItem('sanPham');4
+        var doiTuongDayDu = taoDoiTuongSanPham().fromJSON(json);
+        console.log(doiTuongDayDu);
+    </script>
+
+</body>
+
+</html>

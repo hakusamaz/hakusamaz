@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị sản phẩm</title>
+    <script src="ho_Tro.js"></script>
+    <script src="sanPham.js"></script>
+    <script src="giohang.js"></script>
+    <style>
+        img {
+            width: 100%;
+        }
+
+        .san-pham {
+            width: 15%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            display: inline-block;
+            margin: 10px 15px;
+        }
+
+        .ten-san-pham {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .gia-goc-san-pham {
+            font-size: 12px;
+            text-decoration: line-through;
+            color: #555;
+        }
+
+        .gia-sau-khi-giam {
+            font-size: 15px;
+            color: #555;
+            text-align: right;
+
+        }
+
+        .khu-vuc-san-pham {
+            text-align: right;
+
+
+        }
+
+        .tbn {
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            background-color: chocolate;
+            color: #fff;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .giam-gia {
+            font-size: 15px;
+            color: red;
+            text-align: right;
+
+        }
+
+        .nav-bar {
+            width: 100%;
+            border: 1px solid black;
+            background-color: coral;
+            height: 50px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav-bar">
+        <div class="menu">
+
+        </div>
+
+    </nav>
+    <main>
+        <div id="hien-thi-san-pham">
+
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+
+        var jsonDanhSachSanPham = localStorage.getItem('danhSachSanPham');
+        var danhSachSanPham = JSON.parse(jsonDanhSachSanPham);
+
+
+
+        var HTML = chuyenDoiDanhSachSanPhamThanhHTML(danhSachSanPham);
+        console.log('HTML của danh sách đối tượng là: ' + HTML);
+
+
+        var nodeHienThiSanPham = document.getElementById('hien-thi-san-pham');
+        console.log(nodeHienThiSanPham);
+        nodeHienThiSanPham.innerHTML = HTML;
+
+        /* Chức năng đưa vào giỏ hàng - > Lưu trữ giỏ hàng xuống local storage */
+        function onClickDuaVaoGioHang(idSanPham) {
+            alert('Click Đưa vào giỏ hàng của sản phẩm có id là: ' + idSanPham);
+            /* Định hình đối tượng đưa vào giỏ hàng gồm những gì: 
+                1. ID của sản phẩm - > sản phẩm nào 
+                2. số lượng là bao nhiêu */
+            /* Bước 2: Tạo ra 1 hàm tạo nhanh giỏ hàng */
+
+            /* Bước 3: Lấy danh sách sản phẩm trong giỏ hàng từ local storage lên */
+
+            /* Bước 4: Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng hay chưa  */
+
+            /* Bước 5: Nếu đã tồn tại thì tăng số lượng lên  */
+
+            /* Bước 6: Nếu chưa tồn tại thì thêm sản phẩm vào giỏ hàng ( số lương mặc định là 1 ) */
+        }
+
+        var danhSachItemGioHang = layGioHangTuLocalStorage();
+        console.log('Danh sách item giỏ hàng trước khi được thêm')
+        console.log(danhSachItemGioHang);
+
+        var danhSachItemGioHangSauKhiDuocThem = themVaoGioHang(idSanPham, danhSachItemGioHang);
+        console.log('Danh sách item giỏ hàng sau khi được thêm là ');
+        console.log(danhSachItemGioHangSauKhiDuocThem);
+
+        luuGioHangXuongLocalStorage(danhSachItemGioHangSauKhiDuocThem);
+
+
+    </script>
+
+</body>
+
+</html>

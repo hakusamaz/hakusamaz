@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cách lưu trũư đối tượng xuống local storage</title>
+    <script src="sanPham.js"></script>
+</head>
+
+<body>
+    <script>
+        /*  LƯU TRỮ ĐỐI TƯỢNG */
+        /* Bước 1: Tạo đối tượng */
+        var ip5 = taoDoiTuongSanPham('https://gamek.mediacdn.vn/2018/6/23/2-1529728460112733143894.png', "Haku", 500000, 0.2, 'JAPAN');
+        console.log(ip5);
+
+        /* Bước 2: Chuyển đối tượng thành json */
+        var json = ip5.toJson();
+        console.log(json);
+
+        /* Bước 3: Lưu chuỗi json xuống local storage */
+        localStorage.setItem('sanPham', json);
+
+        /* LẤY ĐỐI TƯỢNG */
+        /* Bước 1: Lấy json từ local storage */
+        var jsonTuLocalStorage = localStorage.getItem('sanPham');
+        console.log('Json từ local storage là: ' + jsonTuLocalStorage);
+
+
+        /* Bước 2: Chuyển json thành đối tượng */
+        var sanPham = JSON.parse(jsonTuLocalStorage);
+        console.log(sanPham);
+        console.log('Tên của sản phẩm là: ' + sanPham.ten);
+
+    </script>
+
+
+</body>
+
+</html>

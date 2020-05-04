@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học về local storage</title>
+</head>
+
+<body>
+    <input type="text" id="key" placeholder="Nhập key của local sotrage">
+    <input type="text" id="value" placeholder="Nhập giá trị của local storage">
+    <button onclick="onClickThemGiaTriVaoLocalStorage()">Thêm giá trị</button>
+    <button onclick="onClickXoaGiaTriKhoiLocalStorage()">Xóa giá trị</button>
+
+    <script>
+
+        /* Bước 1: Lưu trữ xuống local storage  */
+        localStorage.setItem('tenDangNhap', 'longDepTrai');
+        localStorage.setItem('matKhauDangNhap', '1232341234');
+
+        /* Bước 2: Truy xuất dữ liệu local storage */
+        var tenDangNhap = localStorage.getItem('tenDangNhap');
+        console.log('Tên đăng nhập là: ' + tenDangNhap);
+        var matKhauDangNhap = localStorage.getItem('matKhauDangNhap');
+        console.log('Mật khẩu đăng nhập là: ' + matKhauDangNhap);
+
+        /* Bước 3: xóa được dữ liệu trong local storage */
+        function onClickThemGiaTriVaoLocalStorage() {
+            console.log('Gọi vào hàm onClickThemGiaTriVaoLocalStorage ')
+            /* Bước 1: Lấy ra giá trị key và value trong node input */
+            var nodeInputKey = document.getElementById('key');
+            var key = nodeInputKey.value;
+            var nodeInputValue = document.getElementById('value');
+            var value = nodeInputValue.value;
+
+            /* Bước 2: Thực hiện lưu xuống local storage */
+            localStorage.setItem(key, value);
+            alert('Thêm dữ liệu thành công');
+
+        }
+        function onClickXoaGiaTriKhoiLocalStorage() {
+            console.log('Gọi vào hàm onClickXoaGiaTriKhoiLocalStorage');
+            
+            /* Bước 1: Truy xuất lấy giá trị node input */
+            var nodeInputKey = document.getElementById('key');
+            var key = nodeInputKey.value;
+
+            /* Bước 2: Xóa khỏi local storage */
+            localStorage.removeItem(key);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
